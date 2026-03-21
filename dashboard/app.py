@@ -6,7 +6,7 @@ from utils import load_data, load_model, get_risk_tier
 
 st.set_page_config(
     page_title="Fraud Detection Dashboard",
-    page_icon="🛡️",
+    page_icon="",
     layout="wide"
 )
 
@@ -73,7 +73,7 @@ st.plotly_chart(fig_time, use_container_width=True)
 
 # Live Model Prediction
 
-st.markdown("## 🔮 Live Transaction Prediction")
+st.markdown("##  Live Transaction Prediction")
 st.info("Enter transaction details to check if it's fraudulent.")
 
 with st.form("prediction_form"):
