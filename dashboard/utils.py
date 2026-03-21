@@ -1,25 +1,24 @@
 import os
-import zipfile
 import pandas as pd
 import joblib
 import streamlit as st
+
+# Kaggle import 
+os.environ["KAGGLE_USERNAME"] = st.secrets["KAGGLE_USERNAME"] if "KAGGLE_USERNAME" in st.secrets else ""
+os.environ["KAGGLE_KEY"] = st.secrets["KAGGLE_KEY"] if "KAGGLE_KEY" in st.secrets else ""
+
+import kaggle  
 
 BASE = os.path.dirname(os.path.dirname(__file__))
 
 def download_dataset():
     data_path = os.path.join(BASE, "data", "creditcard.csv")
 
-    # If already downloaded, skip
     if os.path.exists(data_path):
         return data_path
 
     os.makedirs(os.path.join(BASE, "data"), exist_ok=True)
 
-    # Kaggle credentials from Streamlit secrets
-    os.environ["KAGGLE_USERNAME"] = st.secrets["KAGGLE_USERNAME"]
-    os.environ["KAGGLE_KEY"]      = st.secrets["KAGGLE_KEY"]
-
-    import kaggle
     kaggle.api.authenticate()
     kaggle.api.dataset_download_files(
         "mlg-ulb/creditcardfraud",
@@ -28,9 +27,11 @@ def download_dataset():
     )
     return data_path
 
+
 def load_data():
     path = download_dataset()
     return pd.read_csv(path)
+
 
 def load_model():
     path = os.path.join(BASE, "models", "fraud_detection_model.pkl")
@@ -43,5 +44,3 @@ def get_risk_tier(prob):
         return " Medium Risk"
     else:
         return " Low Risk"
-
-
