@@ -34,7 +34,7 @@ def load_data():
 
 
 def load_model():
-    path = os.path.join(BASE, "models", "fraud_detection_model.pkl")
+    path = os.path.join(BASE, "models", "fraud_model.pkl")
     return joblib.load(path)
 
 def get_risk_tier(prob):
