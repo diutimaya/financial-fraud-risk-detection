@@ -17,7 +17,7 @@ normal = df[df['Class'] == 0]
 
 # Fraud vs Normal Stats
 
-st.title(" Credit Card Fraud Detection Dashboard")
+st.title(" Fraud Detection Dashboard")
 st.markdown("---")
 
 col1, col2, col3, col4 = st.columns(4)
