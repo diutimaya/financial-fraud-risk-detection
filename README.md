@@ -1,5 +1,7 @@
 # Financial Fraud Risk Detection System
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://financial-fraud-risk-detection-g7w5xwpsotfhz8xq9icpr5.streamlit.app/)
+
 ---
 
 ## Project Overview
