@@ -1,6 +1,10 @@
 # Financial Fraud Risk Detection System
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://financial-fraud-risk-detection-g7w5xwpsotfhz8xq9icpr5.streamlit.app/)
+---
+
+## Live Dashboard
+
+🔴 **[View Live Dashboard](https://financial-fraud-risk-detection-g7w5xwpsotfhz8xq9icpr5.streamlit.app/)**
 
 ---
 
@@ -68,6 +72,8 @@ data/creditcard.csv
 * **Seaborn**
 * **Scikit-learn**
 * **Imbalanced-learn (SMOTE)**
+* **Streamlit**
+* **Plotly**
 * **Jupyter Notebook**
 * **Git & GitHub**
 
@@ -83,6 +89,10 @@ financial-fraud-risk-detection
 │
 ├── database
 │   └── fraud_detection.db
+│
+├── dashboard
+│   ├── app.py
+│   └── utils.py
 │
 ├── images
 │   ├── fraud_vs_normal.png
@@ -227,6 +237,19 @@ For a detailed step-by-step analysis, open the notebook:
 notebook/fraud_analysis.ipynb
 ```
 
+Launch the analytics dashboard:
+
+```
+cd dashboard
+streamlit run app.py
+```
+
+The dashboard provides an interactive view of:
+
+* Key fraud metrics (total transactions, fraud count, fraud rate)
+* Transaction amount distribution and spread
+* Hourly temporal patterns and peak fraud hours
+
 ---
 
 ## Future Improvements
@@ -234,10 +257,12 @@ notebook/fraud_analysis.ipynb
 Potential improvements for this project include:
 
 * Implementing advanced models such as **XGBoost or LightGBM**
-* Building a **real-time fraud detection system**
+* Building a **real-time fraud detection system** with live transaction screening
 * Integrating streaming transaction data
-* Deploying the model as an **API or analytics dashboard**
+* Deploying the model as a **REST API**
 * Performing advanced **feature engineering**
+* Adding user authentication to the dashboard
+* Containerizing the application using **Docker**
 
 ---
 
